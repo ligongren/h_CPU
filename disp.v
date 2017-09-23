@@ -1,19 +1,21 @@
-`define ledZer  2'hfa
-`define ledOne  2'h60
-`define ledTwo  2'h60
+//`define ledZer  2'hfa
+`define ledZer  8'b1100_0000
+`define ledOne  8'b1111_1001
+`define ledTwo  8'b1010_0100
 `define ledThr  2'h60
 `define ledFou  2'h60
 `define ledFiv  2'h60
 `define ledSix  2'h60
 `define ledSev  2'h60
 `define ledEig  2'h60
-`define ledNin  2'h60
+//`define ledNin  2'h60
+`define ledNin  8'b0110_1100
 
 module disp(
     input   clkIn,
     input   rst,
     input   [31:0]in,
-    output  [7:0]lced,
+    output  reg[7:0]led,
     output  reg[3:0]sele
     );
 
@@ -26,15 +28,16 @@ reg sig;
 always @(posedge clkIn or posedge rst)begin
 
     if(rst)begin
-        led<=`ledNin;end
+        led=`ledTwo;end
+		  //led=;end
 
     else
         if(cyc==speed) begin
             cyc<=0;
-            led<={`ledZer};end
+            led=`ledZer;end
         else
-            cyc <=cyc+1;
-            sele<=sele+1;end
+            cyc <=cyc+1;end
+            //sele<=sele+1;end
 
 
 endmodule

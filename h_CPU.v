@@ -1,9 +1,10 @@
 module top(
-    input   clkIn,
-    input   rst,
-    output  led[7:0],
-    output  sele[3:0],
-    );
+	input clkIn,
+	input rst,
+	output wire  [7:0]led,
+	output wire  [3:0]sele
+);
+
 
 
 disp disp0(
