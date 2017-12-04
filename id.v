@@ -26,7 +26,7 @@
 // File:    id.v
 // Author:  Lei Silei
 // E-mail:  leishangwen@163.com
-// Description: ÒëÂë½×¶Î
+// Description: è¯‘ç é˜¶æ®µ
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -41,13 +41,13 @@ module id(
 	input wire[`RegBus]           reg1_data_i,
 	input wire[`RegBus]           reg2_data_i,
 
-	//ËÍµ½regfileµÄĞÅÏ¢
+	//é€åˆ°regfileçš„ä¿¡æ¯
 	output reg                    reg1_read_o,
 	output reg                    reg2_read_o,     
 	output reg[`RegAddrBus]       reg1_addr_o,
 	output reg[`RegAddrBus]       reg2_addr_o, 	      
 	
-	//ËÍµ½Ö´ĞĞ½×¶ÎµÄĞÅÏ¢
+	//é€åˆ°æ‰§è¡Œé˜¶æ®µçš„ä¿¡æ¯
 	output reg[`AluOpBus]         aluop_o,
 	output reg[`AluSelBus]        alusel_o,
 	output reg[`RegBus]           reg1_o,
@@ -88,7 +88,7 @@ module id(
 			reg2_addr_o <= inst_i[20:16];		
 			imm <= `ZeroWord;			
 		  case (op)
-		  	`EXE_ORI:			begin                        //ORIÖ¸Áî
+		  	`EXE_ORI:			begin                        //ORIæŒ‡ä»¤
 		  		wreg_o <= `WriteEnable;		aluop_o <= `EXE_OR_OP;
 		  		alusel_o <= `EXE_RES_LOGIC; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;	  	
 					imm <= {16'h0, inst_i[15:0]};		wd_o <= inst_i[20:16];

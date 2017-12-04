@@ -26,7 +26,7 @@
 // File:    ex_mem.v
 // Author:  Lei Silei
 // E-mail:  leishangwen@163.com
-// Description: EX/MEM�׶εļĴ���
+// Description: EX/MEM阶段的寄存器
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -38,12 +38,12 @@ module ex_mem(
 	input wire										rst,
 	
 	
-	//����ִ�н׶ε���Ϣ	
+	//来自执行阶段的信息	
 	input wire[`RegAddrBus]       ex_wd,
 	input wire                    ex_wreg,
 	input wire[`RegBus]					 ex_wdata, 	
 	
-	//�͵��ô�׶ε���Ϣ
+	//送到访存阶段的信息
 	output reg[`RegAddrBus]      mem_wd,
 	output reg                   mem_wreg,
 	output reg[`RegBus]					 mem_wdata

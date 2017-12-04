@@ -26,7 +26,7 @@
 // File:    mem.v
 // Author:  Lei Silei
 // E-mail:  leishangwen@163.com
-// Description: ·Ã´æ½×¶Î
+// Description: è®¿å­˜é˜¶æ®µ
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -36,12 +36,12 @@ module mem(
 
 	input wire										rst,
 	
-	//À´×ÔÖ´ĞĞ½×¶ÎµÄĞÅÏ¢	
+	//æ¥è‡ªæ‰§è¡Œé˜¶æ®µçš„ä¿¡æ¯	
 	input wire[`RegAddrBus]       wd_i,
 	input wire                    wreg_i,
 	input wire[`RegBus]					  wdata_i,
 	
-	//ËÍµ½»ØĞ´½×¶ÎµÄĞÅÏ¢
+	//é€åˆ°å›å†™é˜¶æ®µçš„ä¿¡æ¯
 	output reg[`RegAddrBus]      wd_o,
 	output reg                   wreg_o,
 	output reg[`RegBus]					 wdata_o

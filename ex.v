@@ -26,7 +26,7 @@
 // File:    ex.v
 // Author:  Lei Silei
 // E-mail:  leishangwen@163.com
-// Description: ִ�н׶�
+// Description: 执行阶段
 // Revision: 1.0
 //////////////////////////////////////////////////////////////////////
 
@@ -36,7 +36,7 @@ module ex(
 
 	input wire										rst,
 	
-	//�͵�ִ�н׶ε���Ϣ
+	//送到执行阶段的信息
 	input wire[`AluOpBus]         aluop_i,
 	input wire[`AluSelBus]        alusel_i,
 	input wire[`RegBus]           reg1_i,
