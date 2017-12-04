@@ -1,19 +1,17 @@
-NET "led[0]" LOC ="L14";
-NET "led[1]" LOC ="H12";
-NET "led[2]" LOC ="N14";
-NET "led[3]" LOC ="N11";
-NET "led[4]" LOC ="P12";
-NET "led[5]" LOC ="L13";
-NET "led[6]" LOC ="M12";
-NET "led[7]" LOC ="N13";
+NET "led[0]"    LOC="N13";
+NET "led[1]"    LOC="M12";
+NET "led[2]"    LOC="L13";
+NET "led[3]"    LOC="P12";
+NET "led[4]"    LOC="N11";
+NET "led[5]"    LOC="N14";
+NET "led[6]"    LOC="H12";
+NET "led[7]"    LOC="L14";
 
-NET "sele[0]" LOC ="F12";
-NET "sele[1]" LOC ="J12";
-NET "sele[2]" LOC ="M13";
-NET "sele[3]" LOC ="K14";
+NET "sele[0]"   LOC="F12";
+NET "sele[1]"   LOC="J12";
+NET "sele[2]"   LOC="M13";
+NET "sele[3]"   LOC="K14";
 
-
-
-//NET "on"		LOC = "F12";
-NET "clkIn"    LOC ="B8";
-NET "rst"    LOC ="G12";
+NET "clk"       LOC="B8";
+NET "rst"       LOC="G12";
+//NET "on"		LOC="F12";

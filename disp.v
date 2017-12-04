@@ -1,43 +1,53 @@
-//`define ledZer  2'hfa
-`define ledZer  8'b1100_0000
-`define ledOne  8'b1111_1001
-`define ledTwo  8'b1010_0100
-`define ledThr  2'h60
-`define ledFou  2'h60
-`define ledFiv  2'h60
-`define ledSix  2'h60
-`define ledSev  2'h60
-`define ledEig  2'h60
-//`define ledNin  2'h60
-`define ledNin  8'b0110_1100
+`include "def.v"
+
+/*
+dispIn：
+    31:0    income signal
+    32      low(32=0, show 15:0) or high(32=1, show 31:16)
+    33      clk
+    34      rst
+    
+output:
+    7:0     control led
+    11:8    select led
+*/
 
 module disp(
-    input   clkIn,
-    input   rst,
-    input   [31:0]in,
+    input   [34:0]dispIn,
     output  reg[7:0]led,
     output  reg[3:0]sele
     );
 
+parameter speed <= 32'h003f_0000;
 
-parameter speed = 32'h003f_0000;
+reg [31:0]  cyc;
+reg [3:0]   
 
-reg [31:0]cyc;
-reg sig;
+initial begin
+    sele <= 4'b0001;end
 
-always @(posedge clkIn or posedge rst)begin
 
+always @(in)begin
+    case(in)
+        4'b0000:out<=`ledZer;
+        default:out=`ledEmp;
+
+
+always @(posedge clkIn)begin
+//always @(posedge clkIn or posedge rst)begin
+
+    sele <= {sele[0],sele[3:1]}
+    
     if(rst)begin
-        led=`ledTwo;end
-		  //led=;end
+        led=`ledEmp;end
+		//led=;end
 
     else
         if(cyc==speed) begin
-            cyc<=0;
-            led=`ledZer;end
+            cyc <= 0;
+            led = `ledZer;end
         else
-            cyc <=cyc+1;end
+            cyc <= cyc+1;end
             //sele<=sele+1;end
-
 
 endmodule
