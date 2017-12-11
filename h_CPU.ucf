@@ -12,6 +12,7 @@ NET "sele[1]"   LOC="J12";
 NET "sele[2]"   LOC="M13";
 NET "sele[3]"   LOC="K14";
 
-NET "clk"       LOC="B8";
+NET "DispClk"   LOC="B8";
 NET "rst"       LOC="G12";
+NET "stepbys"   LOC=
 //NET "on"		LOC="F12";

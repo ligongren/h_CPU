@@ -1,4 +1,4 @@
-`include "def.v"
+`include "defines.v"
 
 /*
 dispIn：
@@ -8,24 +8,24 @@ dispIn：
     34      rst
     
 output:
-    7:0     control led
-    11:8    select led
+    7:0     control disp_data_o
+    11:8    select disp_data_o
 */
 
 module disp(
-    input   [34:0]dispIn,
-    output  reg[7:0]led,
-    output  reg[3:0]sele
-    );
+    input   wire    clk,
+	input   wire    rst,
 
-parameter speed <= 32'h003f_0000;
+    input   wire[`DispInBus]    disp_data_i,
+    output  wire[`DispLedBus]   disp_data_o,
+    output  wire[`DispAddrBus]  disp_addr_o
+    );
 
 reg [31:0]  cyc;
 reg [3:0]   
 
 initial begin
-    sele <= 4'b0001;end
-
+    disp_addr_o <= 4'b0001;end
 
 always @(in)begin
     case(in)
@@ -36,18 +36,18 @@ always @(in)begin
 always @(posedge clkIn)begin
 //always @(posedge clkIn or posedge rst)begin
 
-    sele <= {sele[0],sele[3:1]}
+    disp_addr_o <= {disp_addr_o[0],disp_addr_o[3:1]}
     
     if(rst)begin
-        led=`ledEmp;end
-		//led=;end
+        disp_data_o=`ledEmp;end
+		//disp_data_o=;end
 
     else
-        if(cyc==speed) begin
+        if(cyc==`DispSpeed) begin
             cyc <= 0;
-            led = `ledZer;end
+            disp_data_o = `ledZer;end
         else
             cyc <= cyc+1;end
-            //sele<=sele+1;end
+            //disp_addr_o<=disp_addr_o+1;end
 
 endmodule
