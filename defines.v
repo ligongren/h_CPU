@@ -18,8 +18,14 @@
 `define ledEmp  8'b0000_0000
 
 `define DispInBus       31:0                //数码管显示模块宽度
-`define DispAddrBus     3:0
+`define DispSelBus      3:0
 `define DispLedBus      7:0
+
+`define DispTempBus     15:0
+
+
+`define ShowHigh        15:8
+`define ShowLow         7:0
 
 `define DispSpeed       32'h003f_0000       //数码管刷新速度
 
